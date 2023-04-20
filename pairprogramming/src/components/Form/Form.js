@@ -1,4 +1,4 @@
-// import "./Form.scss"; 
+import "./Form.scss"; 
 import axios from "axios"; 
 import {useState} from "react"; 
 
@@ -50,9 +50,9 @@ function Form (props) {
 
             <form className="formcontainer" onSubmit={handleSubmit}>
                 
-                <label> NAME: </label>
+                <label className="form__label"> Name: </label>
                 <input
-                className="header__form--inputtext"
+                className="form__inputtext"
                 type="text"
                 placeholder="Your name here"
                 name="name"
@@ -60,9 +60,9 @@ function Form (props) {
                 value={name}
                 ></input>
 
-                <label> JOB APPLYING FOR: </label>
+                <label className="form__label"> Job applying for: </label>
                 <input
-                className="header__form--inputtext"
+                className="form__inputtext"
                 type="text"
                 placeholder="What job role are you applying for?"
                 name="applyfor"
@@ -71,9 +71,9 @@ function Form (props) {
 
                 ></input>
 
-                <label> ABOUT ME</label>
+                <label className="form__label"> About Me:</label>
                 <textarea
-                className="header__form--inputtext"
+                className="form__inputtext"
                 placeholder="About me"
                 name="aboutme"
                 onChange={handleChangeAboutMe}
@@ -81,11 +81,11 @@ function Form (props) {
                 ></textarea>
 
 
-                <label>Upload your headshot</label>
+                <label className="form__label">Upload your headshot</label>
                 <input
                 id="headshot"
                 name="headshot"
-                className="header__form--upload"
+                className="form__upload"
                 type="file"
                 accept="image/png, image/jpeg"
                 onChange={handleChangeHeadshot}
