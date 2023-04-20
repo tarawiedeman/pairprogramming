@@ -1,9 +1,9 @@
 // import "./Form.scss"; 
 import axios from "axios"; 
-import {useState, useEffect} from "react"; 
+import {useState} from "react"; 
 
 
-function Form () { 
+function Form (props) { 
     const[name,setName]=useState("");
     const[applyfor,setApplyFor]=useState("");
     const[aboutme,setAboutMe]=useState("");
@@ -26,7 +26,7 @@ function Form () {
     }
 
     const handleSubmit = (e) => {
-        e.prevent.default();
+        e.preventDefault();
         const person = {
             name:name,
             applyingFor:applyfor,
@@ -36,7 +36,10 @@ function Form () {
 
         axios
         .post ("http://localhost:8080/people",person)
-        .then (console.log('post made'))
+        .then ((response) => {
+            console.log("post made");
+            props.setPeopleArr(response.data);
+        })
         .catch ( (e) => console.log (e.message))
     }
 
@@ -78,7 +81,7 @@ function Form () {
                 ></textarea>
 
 
-                <label for="headshot">Upload your headshot</label>
+                <label>Upload your headshot</label>
                 <input
                 id="headshot"
                 name="headshot"
