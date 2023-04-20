@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .form{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     width:30%;
