@@ -46,7 +46,7 @@ function Form (props) {
     return (
 
         <div className="form">
-            <h2> Join Resume Hub !</h2>
+            <h2> Join Job Hunter !</h2>
 
             <form className="formcontainer" onSubmit={handleSubmit}>
                 

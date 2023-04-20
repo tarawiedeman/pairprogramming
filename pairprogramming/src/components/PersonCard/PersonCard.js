@@ -1,5 +1,5 @@
 import {useNavigate} from 'react-router-dom';
-// import headshot from './';
+import './PersonCard.scss';
 
 
 function PersonCard(props) {
