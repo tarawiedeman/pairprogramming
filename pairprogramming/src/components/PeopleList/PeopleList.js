@@ -8,19 +8,18 @@ let peopleArr = [];
 
 
 function PeopleList() {
-    let [loaded, setLoaded] = useState(false);
+    let [peopleArr, setPeopleArr] = useState([]);
     useEffect(() => {
         axios.get(`${baseURL}:${port}/people`)
         .then(response => {
-            peopleArr = JSON.parse(response.data);
-            setLoaded(true);
+            setPeopleArr(JSON.parse(response.data));
         })
         .catch(error => {
             console.log(error);
         })
     }, [])
 
-    if (!loaded) {
+    if (peopleArr.length === 0) {
         return <div>loading...</div>
     }
 
