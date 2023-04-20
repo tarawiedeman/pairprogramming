@@ -26,8 +26,14 @@ function Form () {
                 ></input>
 
 
-                <div>Upload your headshot!</div>
-                <button className="button">Upload</button>
+                <label for="headshot">Upload your headshot</label>
+                <input
+                id="headshot"
+                name="headshot"
+                className="header__form--upload"
+                type="file"
+                accept="image/png, image/jpeg"
+                ></input>
             </form>
 
 
